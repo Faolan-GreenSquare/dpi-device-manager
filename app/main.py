@@ -45,4 +45,4 @@ def physical_device_form(uid):
                            mappings=mapping_formatted)
 
 if __name__ == '__main__':
-    app.run(debug=debug_enabled)
+    app.run(debug=debug_enabled, port='5000', host='0.0.0.0')

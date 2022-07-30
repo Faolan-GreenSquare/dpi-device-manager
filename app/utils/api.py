@@ -1,6 +1,5 @@
 import json
 import requests
-from zoneinfo import ZoneInfo
 from datetime import datetime
 
 physical_link_all = 'https://staging.farmdecisiontech.net.au/broker/api/physical/devices/?include_properties=false'

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<div style="display:flex">
+    <form id="btn-home" class="btn-device-form" action="{{ url_for('index')}}">
+        <input type="submit" value="Home" />
+    </form>
+    <form id="btn-create-mapping" class="btn-device-form" method="post"
+        onSubmit="return confirm('Are you sure you wish to Create a Mapping?');">
+        <input type="submit" name="create_mapping" value="Create Mapping" />
+    </form>
+</div>
+<div class="device-fields">
+    <div>Device Location: {{ deviceLocation }}</div>
+    <div>Device Last Seen: {{ deviceLastSeen }}</div>
+</div>
+<div class="device-grid">
+    <div class="property-header" style="grid-area: a1;"><b>DEVICE PROPERTIES</b></div>
+    <div class="json-formatted">{{ properties }}</div>
+    <div class="property-header" style="grid-area: a2;"><b>DEVICE MAPPINGS</b></div>
+    <div class="json-formatted">{{ mappings }}</div>
+</div>
+{% endblock %}

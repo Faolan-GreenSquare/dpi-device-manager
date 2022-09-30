@@ -23,11 +23,11 @@
 					</div>
 					<div>
 						<label for="form-name">Name</label>
-						<input type="text" id="form-name" name="form_name" value="{{ ld_data.name }}">
+						<input type="text" id="form-device-name" name="form_name" value="{{ ld_data.name }}">
 					</div>
 					<div>
-						<label for="form-name">Location</label>
-						<input type="text" id="form-name" name="form-name" value="{{ deviceLocation }}">
+						<label id="form-location-label" for="form-name">Location</label>
+						<input type="text" id="form-location" name="form_location" value="{{ deviceLocation }}">
 					</div>
 					<label for="device-last-seen">Device Last Seen:</label>
 					<input type="text" id="device-last-seen" name="device_last_seen" value="{{ deviceLastSeen }}" readonly>

@@ -3,11 +3,11 @@ import os
 from datetime import datetime
 
 
-#end_point = os.environ['end_point']
-#bearer_token = os.environ['bearer_token']
+end_point = os.environ['end_point']
+bearer_token = os.environ['bearer_token']
 
-end_point = 'https://staging.farmdecisiontech.net.au'
-bearer_token = 'bad_token'
+#end_point = 'https://staging.farmdecisiontech.net.au'
+#bearer_token = 'bad_token'
     
 
 # Physical Device Links
@@ -86,7 +86,6 @@ def update_physical_device(uid, name, location):
     device = get_physical_device(uid)
     device['name'] = name
     device['location'] = location
-    print(format_json(device))
     response = requests.patch(physical_link_update, headers=headers, json=device)
     if response.status_code == 200:
         return response.json()
@@ -95,7 +94,6 @@ def update_logical_device(uid, name, location):
     device = get_logical_device(uid)
     device['name'] = name
     device['location'] = location
-    print(format_json(device))
     response = requests.patch(logical_link_update, headers=headers, json=device)
     if response.status_code == 200:
         return response.json()
